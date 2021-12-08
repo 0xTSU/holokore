@@ -61,4 +61,4 @@ Simply add a new entry to the 'agencies' JSON object in ```data.json``` with the
 * TBD
 
 ### Upcoming Features
-* Lore
+* Lore tracking

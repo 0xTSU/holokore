@@ -1,0 +1,19 @@
+{
+    "hololive": {
+        "JP": {
+            "site": "https://hololive.hololivepro.com/en/talents/",
+            "twitter": "hololivetv",
+            "channel": "UCJFZiqLMntJufDCHc6bQixg"
+        },
+        "ID": {
+            "site": "https://hololive.hololivepro.com/en/talents/",
+            "twitter": "hololivetv",
+            "channel": "UCfrWoRGlawPQDQxxeIDRP0Q"
+        },
+        "EN": {
+            "site": "https://hololive.hololivepro.com/en/talents/",
+            "twitter": "hololive_En",
+            "channel": "UCotXwY6s8pWmuWd_snKYjhg"
+        }
+    }
+}

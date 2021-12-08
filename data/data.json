@@ -1,19 +1,580 @@
 {
-    "hololive": {
-        "JP": {
-            "site": "https://hololive.hololivepro.com/en/talents/",
-            "twitter": "hololivetv",
-            "channel": "UCJFZiqLMntJufDCHc6bQixg"
-        },
-        "ID": {
-            "site": "https://hololive.hololivepro.com/en/talents/",
-            "twitter": "hololivetv",
-            "channel": "UCfrWoRGlawPQDQxxeIDRP0Q"
-        },
-        "EN": {
-            "site": "https://hololive.hololivepro.com/en/talents/",
-            "twitter": "hololive_En",
-            "channel": "UCotXwY6s8pWmuWd_snKYjhg"
-        }
+    "JP": {
+        "0": [
+            {
+                "name": "Tokino Sora",
+                "name-jp": "ときのそら",
+                "generation": 0,
+                "youtube": "UCp6993wxpyDPHUpavwDFqgg",
+                "bilibili": "286179206",
+                "twitter": "tokino_sora",
+                "official": "tokino-sora",
+                "hashtag": ["#soraArt", "#ときのそら生放送", "#ときのそら"],
+                "emoji": "🐻"
+            },
+            {
+                "name": "Roboco",
+                "name-jp": "ロボ子",
+                "generation": 0,
+                "youtube": "UCDqI2jOz0weumE8s7paEk6g",
+                "bilibili": "20813493",
+                "twitter": "robocosan",
+                "official": "roboco-san",
+                "hashtag": ["#ロボ子Art", "#ロボ子MMD", "#ロボ子生放送", "#ロボ子レクション", "#ろぼさー"],
+                "emoji": "🤖"            
+            },
+            {
+                "name": "Hoshimachi Suisei",
+                "name-jp": "星街すいせい",
+                "generation": 0,
+                "youtube": "UC5CwaMl1eIgY8h02uZw7u8A",
+                "bilibili": "9034870",
+                "twitter": "suisei_hosimati",
+                "official": "hoshimachi-suisei",
+                "hashtag": ["#ほしまちぎゃらりー", "#星街すいせい", "#ほしまちすたじお", "#星詠み"],
+                "emoji": "☄️"
+            },
+            {
+                "name": "Sakura Miko",
+                "name-jp": "さくらみこ",
+                "generation": 0,
+                "youtube": "UC-hM6YJuNYVAmUWxeIr9FeA",
+                "bilibili": "366690056",
+                "twitter": "sakuramiko35",
+                "official": "sakuramiko",
+                "hashtag": ["#miko_Art", "#さくらみこ", "#みこなま", "#ミコミコ動画"],
+                "emoji": "🌸"                
+            },
+            {
+                "name": "AZKi",
+                "name-jp": "AZKi",
+                "generation": 0,
+                "youtube": "UC0TXe_LYZ4scaW2XMyi5_kw",
+                "bilibili": "389056211",
+                "twitter": "AZKi_VDiVA",
+                "official": "azki",
+                "hashtag": ["#AZKiART", "#AZKi", "#開拓者"],
+                "emoji": "⚒️"                
+            }
+        ],
+        "1": [
+            {
+                "name": "Yozora Mel",
+                "name-jp": "夜空メル",
+                "generation": 1,
+                "youtube": "UCD8HOxPs4Xvsm8H0ZxXGiBw",
+                "bilibili": "389856447",
+                "twitter": "yozoramel",
+                "official": "yozora-mel",
+                "hashtag": ["#メルArt", "#夜空メル", "#メル生放送", "#かぷ民", "#かぷかぷ動画"],
+                "emoji": "🌟"                
+            },
+            {
+                "name": "Shirakami Fubuki",
+                "name-jp": "白上フブキ",
+                "generation": 1,
+                "youtube": "UCdn5BQ06XqgXoAxIhbqw5Rg",
+                "bilibili": "332704117",
+                "twitter": "shirakamifubuki",
+                "official": "shirakami-fubuki",
+                "hashtag": ["#絵フブキ", "#フブキch", "#fubukich", "#フブ切り", "#すこん部", "#FBKBFF"],
+                "emoji": "🌽🦊"
+            },
+            {
+                "name": "HAACHAMA (Akai Haato)",
+                "name-jp": "赤井はあと",
+                "generation": 1,
+                "youtube": "UC1CfXB_kRs3C-zaeTG3oGyg",
+                "bilibili": "339567211",
+                "twitter": "akaihaato",
+                "official": "akai-haato",
+                "hashtag": ["#はあとart", "#はあちゃまMMD", "#はあちゃまなう"],
+                "emoji": "❤️"
+            },
+            {
+                "name": "Aki Rosenthal",
+                "name-jp": "アキローゼンタール",
+                "generation": 1,
+                "youtube": "UCFTLzh12_nrtzqBPsTCqenA",
+                "bilibili": "389857131",
+                "twitter": "akirosenthal",
+                "official": "aki-rosenthal",
+                "hashtag": ["#アロ絵", "#スケベなアロ絵", "#ロゼ隊", "#アキびゅーわーるど", "#切り抜きロゼ"],
+                "emoji": "🍎"
+            },
+            {
+                "name": "Natsuiro Matsuri",
+                "name-jp": "夏色まつり",
+                "generation": 1,
+                "youtube": "UCQ0UDLQCjY0rmuxCDE38FGg",
+                "bilibili": "336731767",
+                "twitter": "natsuiromatsuri",
+                "official": "natsuiro-matsuri",
+                "hashtag": ["#祭絵", "#まつりは絵っち", "#まつりある"],
+                "emoji": "🏮"
+            }
+        ],
+        "2": [
+            {
+                "name": "Minato Aqua",
+                "name-jp": "湊あくあ",
+                "generation": 2,
+                "youtube": "UC1opHUrw8rvnsadT-iGp7Cg",
+                "bilibili": "375504219",
+                "twitter": "minatoaqua",
+                "official": "minato-aqua",
+                "hashtag": ["#あくあーと", "#湊あくあ", "#湊あくあ生放送"],
+                "emoji": "⚓️"
+            },
+            {
+                "name": "Murasaki Shion",
+                "name-jp": "紫咲シオン",
+                "generation": 2,
+                "youtube": "UCXTpFs_3PqI41qX2d9tL2Rw",
+                "bilibili": "389857640",
+                "twitter": "murasakishionch",
+                "official": "murasaki-shion",
+                "hashtag": ["#シオンの書物", "#紫咲シオン", "#紫咲シオンMMD", "#コレクシオン"],
+                "emoji": "🌙"
+            },
+            {
+                "name": "Nakiri Ayame",
+                "name-jp": "百鬼あやめ",
+                "generation": 2,
+                "youtube": "UC7fk0CB07ly8oSl0aqKkqFg",
+                "bilibili": "389858027",
+                "twitter": "nakiriayame",
+                "official": "nakiri-ayame",
+                "hashtag": ["#百鬼絵巻", "#百鬼あやめch", "#あやめ夜行"],
+                "emoji": "👿"
+            },
+            {
+                "name": "Yuzuki Choco",
+                "name-jp": "癒月ちょこ",
+                "generation": 2,
+                "youtube": "UC1suqwovbL1kzsoaZgFZLKg",
+                "bilibili": "389858027",
+                "twitter": "nakiriayame",
+                "official": "nakiri-ayame",
+                "hashtag": ["#しょこらーと"],
+                "emoji": "👿"
+            }   
+        ],
+        "3": [
+            {
+                "name": "Usada Pekora",
+                "name-jp": "兎田ぺこら",
+                "generation": 3,
+                "youtube": "UC1DCedRgGHBdm81E1llLhOQ",
+                "bilibili": "443305053",
+                "twitter": "usadapekora",
+                "official": "usada-pekora",
+                "hashtag": ["#ぺこらーと", "#野うさぎ同盟", "#ぺこらいぶ", "#ひとくちぺこら"],
+                "emoji": "🥕"      
+            },
+            {
+                "name": "Uruha Rushia",
+                "name-jp": "潤羽るしあ",
+                "generation": 3,
+                "youtube": "UCl_gCybOJRIgOXw6Qb4qJzQ",
+                "bilibili": "443300418",
+                "twitter": "uruharushia",
+                "official": "uruha-rushia",
+                "hashtag": ["#るしあらいぶ", "#絵クロマンサー", "#ふぁんでっど", "#きるしあ"],
+                "emoji": "🦋"      
+            },
+            {
+                "name": "Houshou Marine",
+                "name-jp": "宝鐘マリン",
+                "generation": 3,
+                "youtube": "UCCzUftO8KOVkV4wQG1vkUvg",
+                "bilibili": "454955503",
+                "twitter": "houshoumarine",
+                "official": "houshou-marine",
+                "hashtag": ["#マリンのお宝", "#マリン航海記", "#わかるマリン"],
+                "emoji": "🏴‍☠️"      
+            },
+            {
+                "name": "Shiranui Flare",
+                "name-jp": "不知火フレア",
+                "generation": 3,
+                "youtube": "UCvInZx9h3jC2JzsIzoOebWg",
+                "bilibili": "454737600",
+                "twitter": "shiranuiflare",
+                "official": "shiranui-flare",
+                "hashtag": ["#しらぬえ", "#不知火建設企画部", "#切りぬい", "#聞いてよフレア", "#きいたよフレア", "#エルフレンド", "#フレアストリーム"],
+                "emoji": "🔥"      
+            },
+            {
+                "name": "Shirogane Noel",
+                "name-jp": "白銀ノエル",
+                "generation": 3,
+                "youtube": "UCdyqAaZDKHXg4Ahi7VENThQ",
+                "bilibili": "454733056",
+                "twitter": "shiroganenoel",
+                "official": "shirogane-noel",
+                "hashtag": ["#ノエラート", "#ノエル団長ボイスたすかる", "#クリ抜き太郎", "#白銀聖騎士団", "#ノエルーム"],
+                "emoji": "⚔️"      
+            }
+        ],
+        "4": [
+            {
+                "name": "Tokoyami Towa",
+                "name-jp": "常闇トワ",
+                "generation": 4,
+                "youtube": "UC1uv2Oq6kNxgATlCiez59hw",
+                "bilibili": "491474051",
+                "twitter": "tokoyamitowa",
+                "official": "tokoyami-towa",
+                "hashtag": ["#TOWART", "#CUTOWA", "#トワイライヴ", "#常闇眷属"],
+                "emoji": "👾"
+            },
+            {
+                "name": "Amane Kanata",
+                "name-jp": "天音かなた",
+                "generation": 4,
+                "youtube": "UCZlDXzGoo7d44bwdNObFacg",
+                "bilibili": "491474048",
+                "twitter": "amanekanatach",
+                "official": "amane-kanata",
+                "hashtag": ["#かなたーと", "#PPカット", "#天界学園放送部", "#かなたんMMD"],
+                "emoji": "💫"
+            },
+            {
+                "name": "Himemori Luna",
+                "name-jp": "姫森ルーナ",
+                "generation": 4,
+                "youtube": "UCa9Y57gfeY0Zro_noHRVrnw",
+                "bilibili": "491474052",
+                "twitter": "himemoriluna",
+                "official": "himemori-luna",
+                "hashtag": ["#ルーナート", "#なのらいぶ", "#姫森ルーナ"],
+                "emoji": "🍬"
+            },
+            {
+                "name": "Tsunomaki Watame",
+                "name-jp": "角巻わため",
+                "generation": 4,
+                "youtube": "UCqm3BQLlJfvkTsX_hvm0UmA",
+                "bilibili": "491474050",
+                "twitter": "tsunomakiwatame",
+                "official": "tsunomaki-watame",
+                "hashtag": ["#つのまきあーと", "#わためいと", "#ドドドライブ", "#わたわた動画"],
+                "emoji": "🐏"
+            },
+            {
+                "name": "Kiryu Coco",
+                "name-jp": "桐生ココ",
+                "generation": 4,
+                "youtube": "UCS9uQI-jC3DE0L4IpXyvr6w",
+                "bilibili": "491474049",
+                "twitter": "kiryucoco",
+                "official": "kiryu-coco",
+                "hashtag": ["#みかじ絵", "#ココここ", "#たつのこ", "#holoJPmeme"],
+                "emoji": "🐉"
+            }
+        ],
+        "5": [
+            {
+                "name": "Yukihana Lamy",
+                "name-jp": "雪花ラミィ",
+                "generation": 5,
+                "youtube": "UCFKOVgVbGmX65RxO3EtH3iw",
+                "bilibili": "624252706",
+                "twitter": "yukihanalamy",
+                "official": "yukihana-lamy",
+                "hashtag": ["#LamyArt", "#Lamyme", "#らみらいぶ", "#雪民", "#ラミィネート"],
+                "emoji": "☃️"
+            },
+            {
+                "name": "Shishiro Botan",
+                "name-jp": "獅白ぼたん",
+                "generation": 5,
+                "youtube": "UCUKD-uaobj9jiqB-VXt71mA",
+                "bilibili": "nil",
+                "twitter": "shishirobotan",
+                "official": "shishiro-botan",
+                "hashtag": ["#ししらーと ", "#ぐうたらいぶ ", "#SSRB", "#しし論"],
+                "emoji": "♌"
+            },
+            {
+                "name": "Momosuzu Nene",
+                "name-jp": "桃鈴ねね",
+                "generation": 5,
+                "youtube": "UCAWSyEs_Io8MtpY3m-zqILA",
+                "bilibili": "nil",
+                "twitter": "momosuzunene",
+                "official": "momosuzu-nene",
+                "hashtag": ["#ねねアルバム", "#ねねいろらいぶ", "#ねっ子", "#ほろふぁいぶ", "#ねぽらぼ", "#サムねね"],
+                "emoji": "🍑"
+            },
+            {
+                "name": "Omaru Polka",
+                "name-jp": "尾丸ポルカ",
+                "generation": 5,
+                "youtube": "UCK9V2B22uJYu3N7eR_BT9QA",
+                "bilibili": "nil",
+                "twitter": "omarupolka",
+                "official": "omaru-polka",
+                "hashtag": ["#絵まる", "#ポルカ公演中", "#ポルカット", " #おまる座", "#ねぽらぼ", "#ポルカおるか", "#尾丸投げ"],
+                "emoji": "🎪"
+            }
+        ],
+        "6": [
+            {
+                "name": "La+ Darknesss",
+                "name-jp": "ラプラス・ダークネス",
+                "generation": 6,
+                "youtube": "UCENwRMx5Yh42zWpzURebzTw",
+                "bilibili": "nil",
+                "twitter": "LaplusDarknesss",
+                "official": "la-darknesss",
+                "hashtag": ["#Laplus_Artdesu", "#laplus_great"],
+                "emoji": "🛸"
+            },
+            {
+                "name": "Hakui Koyori",
+                "name-jp": "博衣こより",
+                "generation": 6,
+                "youtube": "UC6eWCld0KwmyHFbAqK3V-Rw",
+                "bilibili": "nil",
+                "twitter": "hakuikoyori",
+                "official": "hakui-koyori",
+                "hashtag": ["#溶けろこより"],
+                "emoji": "🧪"
+            },
+            {
+                "name": "Takane Lui",
+                "name-jp": "鷹嶺ルイ",
+                "generation": 6,
+                "youtube": "UCs9_O1tRPMQTHQ-N_L6FU2g",
+                "bilibili": "nil",
+                "twitter": "takanelui",
+                "official": "takane-lui",
+                "hashtag": ["#Luillust", "#鷹嶺ルイ", "#エブリルイ", "#ルイ友", "#たかねの見物"],
+                "emoji": "🥀"
+            },
+            {
+                "name": "Sakamata Chloe",
+                "name-jp": "沙花叉クロヱ",
+                "generation": 6,
+                "youtube": "UCIBY1ollUsauvVi4hW4cumw",
+                "bilibili": "nil",
+                "twitter": "sakamatachloe",
+                "official": "sakamata-chloe",
+                "hashtag": ["#さかまた飼育日記", "#またまたさかまた"],
+                "emoji": "🎣"
+            },
+            {
+                "name": "Kazama Iroha",
+                "name-jp": "風真いろは",
+                "generation": 6,
+                "youtube": "UC_vMYWcDjmfdpH6r4TTn1MQ",
+                "bilibili": "nil",
+                "twitter": "kazamairohach",
+                "official": "kazama-iroha",
+                "hashtag": ["#いろはにも絵を", "#かざま修行中", "#かざまが斬る"],
+                "emoji": "🍃"
+            }
+        ]
+    },
+    "ID": {
+        "1": [
+            {
+                "name": "Ayunda Risu",
+                "name-jp": "アユンダ・リス",
+                "generation": 1,
+                "youtube": "UCOyYb1c43VlX9rc_lT6NKQw",
+                "bilibili": "nil",
+                "twitter": "ayunda_risu",
+                "official": "ayunda-risu",
+                "hashtag": ["#GambaRisu", "#Ayunda_Risu", "#Risu_Live", "#Risuggestion", "#RisUpdate", "#Risuners", "#Risu_meme"],
+                "emoji": "🐿️"
+            },
+            {
+                "name": "Moona Hoshinova",
+                "name-jp": "ムーナ・ホシノヴァ",
+                "generation": 1,
+                "youtube": "UCP0BspO_AMEe3aQqqpo89Dg",
+                "bilibili": "nil",
+                "twitter": "moonahoshinova",
+                "official": "moona-hoshinova",
+                "hashtag": ["#Moona_Hoshinova"],
+                "emoji": "🔮"
+            },
+            {
+                "name": "Airani Iofifteen",
+                "name-jp": "アイラニ・イオフィフティーン",
+                "generation": 1,
+                "youtube": "UCAoy6rzhSf4ydcYjJw3WoVg",
+                "bilibili": "nil",
+                "twitter": "airaniiofifteen",
+                "official": "airani-iofifteen",
+                "hashtag": ["#ioarts", "#iomemes", "#IOFORIA"],
+                "emoji": "🎨"
+            }
+        ],
+        "2": [
+            {
+                "name": "Kureiji Ollie",
+                "name-jp": "クレイジー・オリー",
+                "generation": 2,
+                "youtube": "UCYz_5n-uDuChHtLo7My1HnQ",
+                "bilibili": "nil",
+                "twitter": "kureijiollie",
+                "official": "kureiji-ollie",
+                "hashtag": ["#graveyART", "#Kureiji_Ollie", "#ZOMRADE"],
+                "emoji": "🧟‍♀️"
+            },
+            {
+                "name": "Anya Melfissa",
+                "name-jp": "アーニャ・メルフィッサ",
+                "generation": 2,
+                "youtube": "UC727SQYUvx5pDDGQpTICNWg",
+                "bilibili": "nil",
+                "twitter": "anyamelfissa",
+                "official": "anya-melfissa",
+                "hashtag": ["#melfriends", "#anyatelier", "#Liveissa "],
+                "emoji": "🍂"
+            },
+            {
+                "name": "Pavolia Reine",
+                "name-jp": "パヴォリア・レイネ",
+                "generation": 2,
+                "youtube": "UChgTyjG-pdNvxxhdsXfHQ5Q",
+                "bilibili": "nil",
+                "twitter": "pavoliareine",
+                "official": "pavolia-reine",
+                "hashtag": ["#Reinessance", "#Pavolive"],
+                "emoji": "🦚"
+            }
+        ]
+    },
+    "EN": {
+        "myth": [
+            {
+                "name": "Gawr Gura",
+                "name-jp": "がうる・ぐら",
+                "generation": 1,
+                "youtube": "UCoSrY_IQQVpmIRZ9Xf-y93g",
+                "bilibili": "nil",
+                "twitter": "gawrgura",
+                "official": "gawr-gura",
+                "hashtag": ["#gawrt", "#chumbuds", "#gawrgura"],
+                "emoji": "🔱"
+            },
+            {
+                "name": "Mori Calliope",
+                "name-jp": "森 カリオペ",
+                "generation": 1,
+                "youtube": "UCL_qhgtOy0dy1Agp8vkySQg",
+                "bilibili": "nil",
+                "twitter": "moricalliope",
+                "official": "mori-calliope",
+                "hashtag": ["#callillust", "#calliolive"],
+                "emoji": "💀"
+            },
+            {
+                "name": "Takanashi Kiara",
+                "name-jp": "小鳥遊キアラ",
+                "generation": 1,
+                "youtube": "UCHsx4Hqa-1ORjQTh9TYDhww",
+                "bilibili": "nil",
+                "twitter": "takanashikiara",
+                "official": "takanashi-kiara",
+                "hashtag": ["#artsofashes", "#絵ニックス", "#kfp", "#キアライブ", "#kfpmemes"],
+                "emoji": "🐔"
+            },
+            {
+                "name": "Ninomae Ina'nis",
+                "name-jp": "一伊那尓栖",
+                "generation": 1,
+                "youtube": "UCMwGHR0BTZuLsmjY_NT5Pwg",
+                "bilibili": "nil",
+                "twitter": "ninomaeinanis",
+                "official": "ninomae-inanis",
+                "hashtag": ["#inART", "#いなート", "#TAKOTIME", "#タコタイム"],
+                "emoji": "🐙"
+            },
+            {
+                "name": "Watson Amelia",
+                "name-jp": "ワトソン・アメリア",
+                "generation": 1,
+                "youtube": "UCyl1z3jo3XHR1riLFKG5UAg",
+                "bilibili": "nil",
+                "twitter": "watsonameliaEN",
+                "official": "watson-amelia",
+                "hashtag": ["#ameliaRT", "#amelive", "#teamates", "#holoMyth"],
+                "emoji": "🔎"
+            },
+            {
+                "name": "IRyS",
+                "name-jp": "アイリス",
+                "generation": 1,
+                "youtube": "UC8rcEBzJSleTkf_-agPM20g",
+                "bilibili": "nil",
+                "twitter": "irys_en",
+                "official": "irys",
+                "hashtag": ["#IRySart", "#IRyS", "#IRyStocrats"],
+                "emoji": "💎"
+            }
+        ],
+        "council": [
+            {
+                "name": "Tsukumo Sana",
+                "name-jp": "九十九 佐命",
+                "generation": 2,
+                "youtube": "UCsUj0dszADCGbF3gNrQEuSQ",
+                "bilibili": "nil",
+                "twitter": "tsukumosana",
+                "official": "tsukumo-sana",
+                "hashtag": ["#galaxillust"],
+                "emoji": "🪐"
+            },
+            {
+                "name": "Ceres Fauna",
+                "name-jp": "セレス・ファウナ",
+                "generation": 2,
+                "youtube": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
+                "bilibili": "nil",
+                "twitter": "ceresfauna",
+                "official": "ceres-fauna",
+                "hashtag": ["#FineFaunart", "#faunline"],
+                "emoji": "🌿"
+            },
+            {
+                "name": "Ouro Kronii",
+                "name-jp": "オーロ・クロニー",
+                "generation": 2,
+                "youtube": "UCmbs8T6MWqUHP1tIQvSgKrg",
+                "bilibili": "nil",
+                "twitter": "ourokronii",
+                "official": "ouro-kronii",
+                "hashtag": ["#kronillust", "#krotime", "#クロニーラ", "#kroniijokes"],
+                "emoji": "⏳"
+            },
+            {
+                "name": "Nanashi Mumei",
+                "name-jp": "七詩ムメイ",
+                "generation": 2,
+                "youtube": "UC3n5uGu18FoCy23ggWWp8tA",
+                "bilibili": "nil",
+                "twitter": "ourokronii",
+                "official": "ouro-kronii",
+                "hashtag": ["#drawMEI", "#watchMEI", "#memeMEI"],
+                "emoji": "🦉"
+            },
+            {
+                "name": "Hakos Baelz",
+                "name-jp": "ハコス・ベールズ",
+                "generation": 2,
+                "youtube": "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
+                "bilibili": "nil",
+                "twitter": "hakosbaelz",
+                "official": "hakos-baelz",
+                "hashtag": ["#illustrayBAE", "#ベーアート", "#enterbaelz", "#YABAEL", "#ヤベール", "#MADDOOFS"],
+                "emoji": "🎲"
+            }
+        ]
     }
 }

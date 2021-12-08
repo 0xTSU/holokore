@@ -22,5 +22,10 @@ const ALL_INTENTS =
 
 const bot = new Discord.Client({ intents: ALL_INTENTS });
 
-bot.on("messageCreate", message )
+bot.on("ready", message => {
+
+    
+
+});
+
 bot.login(config.token);
