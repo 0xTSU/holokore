@@ -58,7 +58,7 @@ Myth, Council, and iRyS
 Simply add a new entry to the 'agencies' JSON object in ```data.json``` with the correct properties, and relaunch the bot. A new text channel will then be created and labeled the new agency's name.  
 
 ### Dependencies
-*TBD
+* TBD
 
 ### Upcoming Features
-*Lore
+* Lore
