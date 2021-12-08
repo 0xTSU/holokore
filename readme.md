@@ -11,11 +11,16 @@ This bot is hands-off management-wise. As it is running, it will send and update
 
 ### Commands
 
-* !setrole name
+* !setrole "name"
+
 Requests role of vtuber
+
 Ex: !reqrole "amelia watson"
-* !delrole name
+
+* !delrole "name"
+
 Removes user from role
+
 Ex: !delrole "amelia watson"
 
 ### Features
