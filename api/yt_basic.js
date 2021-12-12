@@ -1,33 +1,28 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const fs = require('fs')
 
-const url = 'https://www.youtube.com/channel/UCyl1z3jo3XHR1riLFKG5UAg';
-
-/*
-axios(url)
-    .then(response => {
-        const html = response.data
-        let $ = cheerio.load(html)
-        let text = $('script').contents()['23']['data']
-        text = JSON.stringify(JSON.parse(text.substring(20, text.length - 1)), null, ' ')
-        fs.writeFile('./wah.json', text, function(err) {
-            if (err) {
-                return console.log(err)
-            }
-        })
-        
-    })
-*/
+// returns a promise containing page data
+// .data returns html
+// var with json data within one of the 'script' elements
+// iterate thru scripts to get the one with the desired var
+// json parse, stringify
+// return
 async function getPage (url) {
     let response = await axios(url)
     const data = response.data
     let $ = cheerio.load(data)
-    let text = $('script').contents()['23']['data']
-    text = JSON.stringify(JSON.parse(text.substring(20, text.length - 1)), null, ' ')
-    return text
+    let content = await findVar($('script'))
+    content = JSON.stringify(JSON.parse(content.substring(20, content.length - 1)), null, ' ')
+    return content
 }
 
-getPage(url).then( (response) => {
-    console.log(response)
-})
+async function findVar (data) {
+    for (i = 0; i < data.contents().length; i++){
+        let str = data.contents()[i]['data']
+        if (str.substring(0, 19) == "var ytInitialData =" ) { return str }
+    }
+}
+
+module.exports = {
+    getPage
+};
