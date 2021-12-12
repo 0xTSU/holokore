@@ -2,6 +2,8 @@
     "keys": [{
         "agency": "hololive",
         "region": ["JP", "ID", "EN"],
-        "generation": ["0", "1", "2", "3", "4", "5", "6", "council", "myth"]
+        "generation": [["0","1","2","3","4","5","6"],
+                        ["1","2"],
+                        ["myth","council"]]
     }]
 }
