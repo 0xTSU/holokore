@@ -46,29 +46,26 @@ class Vtuber {
             }
         }
         
-        let path = '../../mem/' + this.youtube + '.json';
+        let path = '../../mem' + '/' + this.youtube + '.json';
         const fs = require('fs');
         let json = JSON.stringify(data);
         fs.writeFile(path, json, function (err){
-            console.log(err);
+            //console.log(err);
         });
     };
 
     createEntry() {
-        let dir = './mem/';
-        let path = dir + this.youtube + '.json';
+        let dir = './mem';
+        let path = dir + '/' + this.youtube + '.json';
 
         const fs = require('fs');
 
         fs.mkdir(dir, {recursive: true}, (err) => {
-            if (err) {
-                return console.error(err);
-            }
             console.log("created");
         })
         let data = "meme";
         fs.writeFile(path, data, { flag: 'wx' }, function (err) {
-            if (err) throw err;
+            //if (err) throw err;
         console.log("It's saved!");
         });
     };
