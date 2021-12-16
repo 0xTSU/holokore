@@ -1,80 +1,45 @@
-class Vtuber {
-    constructor(
-        name, name_jp, generation, youtube, bilibili, twitter, official,
-        hashtag, emoji
-    ) {
-        const folder = require('./util/entryCreated.js');
-
-        this.name = name;
-        this.name_jp = name_jp;
-        this.generation = generation;
-        this.youtube = youtube;
-        this.bilibili = bilibili;
-        this.twitter = twitter;
-        this.official = official;
-        this.hashtag = hashtag;
-        this.emoji = emoji;
-
-        if (!folder.entryCreated(this.youtube)) {
-            this.createEntry();
-        }
+class Vtubers {
+    constructor(agency, keys, value) {
+        this.agency = agency
+        this.map = new Map()
+        this.directory = []
+        this.initializeDirectory(keys, value)
     };
 
-    async 
+    get getAgency() {
+        return this.agency
+    }
 
-    async update(){
+    get getDirectory() {
+        return this.directory
+    }
 
-        let data = {
-            'twitter': {
-                'link': '',
-                'msg_id': ''
-            },
-            'livestream': {
-                'live': false,
-                'link': '',
-                'msg_id': ''
-            },
-            'stats': {
-                'twitter': {
-                    'current': '',
-                    'prev': ''
-                },
-                'youtube': {
-                    'current': '',
-                    'prev': ''
+    async initializeDirectory(keys, value) {
+        const region = keys['region']
+
+        for (const i = 0; i < region.length; i++) {
+
+            const gen = keys['generation'][i]
+            for (const u = 0; u < gen.length; u++) {
+
+                const id = value[region[i]][gen[u]]
+                for (const v = 0; v < id.length; v++) {
+                    const x = new Vtuber(id[v].youtube, id[v].twitter, id[v].hashtag[0])
+                    this.directory.push(x)
                 }
+
+
             }
+
         }
         
-        let path = '../../mem' + '/' + this.youtube + '.json';
-        const fs = require('fs');
-        let json = JSON.stringify(data);
-        fs.writeFile(path, json, function (err){
-            //console.log(err);
-        });
-    };
-
-    createEntry() {
-        let dir = './mem';
-        let path = dir + '/' + this.youtube + '.json';
-
-        const fs = require('fs');
-
-        fs.mkdir(dir, {recursive: true}, (err) => {
-            console.log("created");
-        })
-        let data = "meme";
-        fs.writeFile(path, data, { flag: 'wx' }, function (err) {
-            //if (err) throw err;
-        console.log("It's saved!");
-        });
-    };
+    }
 }
 
-let peko = new Vtuber("meme", "meme", "meme","123123");
+let peko = new Agency("hololive", require('../data/keys.json')['keys'][0], require('../data/data.json'))
 
-peko.update()
-    .then()
-    .catch((error) => {
-        console.log("meme");
-    });
+console.log(peko.getDirectory)
+
+module.exports = {
+    Agency
+}

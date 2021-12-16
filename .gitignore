@@ -4,3 +4,4 @@ node_modules/
 mem/
 logs/
 data/config.json
+test.*
