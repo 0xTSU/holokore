@@ -157,8 +157,43 @@
                 "twitter": "nakiriayame",
                 "official": "nakiri-ayame",
                 "hashtag": ["#しょこらーと"],
-                "emoji": "👿"
-            }   
+                "emoji": "💋"
+            },   
+            {
+                "name": "Oozora Subaru",
+                "name-jp": "大空スバル",
+                "generation": 2,
+                "youtube": "UCvzGlP9oQwU--Y0r9id_jnA",
+                "bilibili": "389859190",
+                "twitter": "oozorasubaru",
+                "official": "oozora-subaru",
+                "hashtag": ["#プロテインザスバル", "#大空スバル", "#生スバル", "#スバ友", "#きりぬきスバル"],
+                "emoji": "🚑"
+            }
+        ],
+        "gamers": [
+            {
+                "name": "Ookami Mio",
+                "name-jp": "大神ミオ",
+                "generation": 2,
+                "youtube": "UCp-5t9SrOQwXMU7iIjQfARg",
+                "bilibili": "389862071",
+                "twitter": "ookamimio",
+                "official": "ookami-mio",
+                "hashtag": ["#みおーん絵", "#ミオかわいい", "#ミオじゅ〜る", "#ボイスのミオかわいい"],
+                "emoji": "🌲"          
+            },
+            {
+                "name": "Inugami Korone",
+                "name-jp": "戌神ころね",
+                "generation": 2,
+                "youtube": "UChAnqc_AY5_I3Px5dig3X1Q",
+                "bilibili": "412135619",
+                "twitter": "inugamikorone",
+                "official": "inugami-korone",
+                "hashtag": ["#みおーん絵", "#ミオかわいい", "#ミオじゅ〜る", "#ボイスのミオかわいい"],
+                "emoji": "🥐"          
+            }
         ],
         "3": [
             {

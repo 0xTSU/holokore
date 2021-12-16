@@ -8,12 +8,12 @@ const cheerio = require('cheerio');
 // json parse, stringify
 // return
 async function getPage (url) {
-    let response = await axios(url)
+    const response = await axios('https://www.youtube.com/channel/' + url + '/videos')
     const data = response.data
-    let $ = cheerio.load(data)
-    let content = await findVar($('script'))
-    content = JSON.stringify(JSON.parse(content.substring(20, content.length - 1)), null, ' ')
-    return content
+    const $ = cheerio.load(data)
+    const content = await findVar($('script'))
+    let page = JSON.parse(content.substring(20, content.length - 1))
+    return page
 }
 
 async function findVar (data) {
@@ -23,6 +23,12 @@ async function findVar (data) {
     }
 }
 
+async function getWritablePage(content) {
+    let str = JSON.stringify(content, null, '\t')
+    return str
+}
+
 module.exports = {
-    getPage
+    getPage,
+    getWritablePage
 };
