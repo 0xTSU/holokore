@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const config = require('../data/config.json');
 const data = require('../data/data.json');
 const chuubas = require("../data/data.json");
-const path = require('path')
+const path = require('path');
+const { title } = require('process');
 
 // all intents for now until i figure out whether or not im satisfied with this project
 const ALL_INTENTS = 
@@ -57,10 +58,59 @@ class bot extends Discord.Client {
         const tweet = await crawlTwit(twitter)
     }
 
+    // garbage
     async crawlChannel(channel_id) {
         const tubepi = require('../api/yt_basic.js')
-        const channel = tubepi.getPage(channel_id)
+        const channel = await tubepi.getPage(channel_id)
+
+        const i = await this.getVideoIndex(channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'])
+        const name = channel['metadata']['channelMetadataRenderer']['title']
+        const avatar = channel['metadata']['channelMetadataRenderer']['avatar']['thumbnails'][0]['url']
+        const sub_count = channel['header']['c4TabbedHeaderRenderer']['subscriberCountText']['simpletext']
+        const content_link = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['videoId']
+        const content_thumbnail = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['thumbnail']['thumbnails'][await this.getLastElement(channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][0]['gridVideoRenderer']['thumbnail']['thumbnails'])]['url']
+        const content_title = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['title']['runs'][0]['text']
+
+        const isLive = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['thumbnailOverlays'][0]['thumbnailOverlayTimeStatusRenderer']['style']
+
+        const content_views = "0"
+        if (isLive == "LIVE") {
+            content_views = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['viewCountText']['runs'][0]['text']
+        }else if (isLive == "DEFAULT") {
+            content_views = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['viewCountText']['simpleText']
+        }
+
+        const details = {
+            "youtube": {
+                "name" : name,
+                "avatar" : avatar,
+                "subscriber-count" : sub_count,
+                "streaming" : isLive,
+                "video-title" : content_title,
+                "video-link" : content_link,
+                "thumbnail" : content_thumbnail,
+                "viewcount" : content_views
+            }
+        }
+
+        return JSON.stringify(details)
         
+    }
+
+    async crawlTwitter(twitter) {
+
+    }
+    
+    async getLastElement(array) {
+        return (array.length - 1)
+    }
+
+    async getVideoIndex(array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i]['gridVideoRenderer']['thumbnailOverlays'][0]['thumbnailOverlayTimeStatusRenderer']['style'] != "UPCOMING") {
+                return i
+            }
+        }
     }
 
     async init() {

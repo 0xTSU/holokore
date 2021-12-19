@@ -9,8 +9,7 @@ const cheerio = require('cheerio');
 // return
 async function getPage (url) {
     const response = await axios('https://www.youtube.com/channel/' + url + '/videos')
-    const data = response.data
-    const $ = cheerio.load(data)
+    const $ = cheerio.load(response.data)
     const content = await findVar($('script'))
     let page = JSON.parse(content.substring(20, content.length - 1))
     return page
