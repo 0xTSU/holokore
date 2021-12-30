@@ -1,36 +1,23 @@
 const Discord = require('discord.js');
 const config = require('../data/config.json');
-const data = require('../data/data.json');
-const chuubas = require("../data/data.json");
+const data = require("../data/data.json");
+const keys = require('../data/keys.json').keys
 const path = require('path');
-const { title } = require('process');
+
 
 // all intents for now until i figure out whether or not im satisfied with this project
 const ALL_INTENTS = 
     (1 << 0) +  // GUILDS
-    (1 << 1) +  // GUILD_MEMBERS
-    (1 << 2) +  // GUILD_BANS
-    (1 << 3) +  // GUILD_EMOJIS_AND_STICKERS
-    (1 << 4) +  // GUILD_INTEGRATIONS
-    (1 << 5) +  // GUILD_WEBHOOKS
-    (1 << 6) +  // GUILD_INVITES
-    (1 << 7) +  // GUILD_VOICE_STATES
-    (1 << 8) +  // GUILD_PRESENCES
-    (1 << 9) +  // GUILD_MESSAGES
-    (1 << 10) + // GUILD_MESSAGE_REACTIONS
-    (1 << 11) + // GUILD_MESSAGE_TYPING
-    (1 << 12) + // DIRECT_MESSAGES
-    (1 << 13) + // DIRECT_MESSAGE_REACTIONS
-    (1 << 14);  // DIRECT_MESSAGE_TYPING
+    (1 << 9);
 
 const dbot = new Discord.Client({ intents: ALL_INTENTS });
+
 
 class bot extends Discord.Client {
     constructor(options) {
         super(options)
 
         this.directory = []
-
         
     }
 
@@ -63,24 +50,26 @@ class bot extends Discord.Client {
         const tubepi = require('../api/yt_basic.js')
         const channel = await tubepi.getPage(channel_id)
 
+        
+
         const i = await this.getVideoIndex(channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'])
         const name = channel['metadata']['channelMetadataRenderer']['title']
         const avatar = channel['metadata']['channelMetadataRenderer']['avatar']['thumbnails'][0]['url']
-        const sub_count = channel['header']['c4TabbedHeaderRenderer']['subscriberCountText']['simpletext']
+        const sub_count = channel['header']['c4TabbedHeaderRenderer']['subscriberCountText']['simpleText']
         const content_link = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['videoId']
         const content_thumbnail = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['thumbnail']['thumbnails'][await this.getLastElement(channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][0]['gridVideoRenderer']['thumbnail']['thumbnails'])]['url']
         const content_title = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['title']['runs'][0]['text']
 
         const isLive = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['thumbnailOverlays'][0]['thumbnailOverlayTimeStatusRenderer']['style']
 
-        const content_views = "0"
+        var content_views = "0"
         if (isLive == "LIVE") {
             content_views = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['viewCountText']['runs'][0]['text']
         }else if (isLive == "DEFAULT") {
             content_views = channel['contents']['twoColumnBrowseResultsRenderer']['tabs'][1]['tabRenderer']['content']['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]['gridRenderer']['items'][i]['gridVideoRenderer']['viewCountText']['simpleText']
         }
 
-        const details = {
+        var details = {
             "youtube": {
                 "name" : name,
                 "avatar" : avatar,
@@ -93,14 +82,33 @@ class bot extends Discord.Client {
             }
         }
 
-        return JSON.stringify(details)
+        return details
         
     }
 
     async crawlTwitter(twitter) {
+        const birdpi = require('../api/tw_basic.js')
+        const bird = await birdpi.getPage(twitter)
+        const tweet = await birdpi.getLatestTweet(bird, twitter)
+        const info = await birdpi.getBasicInfo(bird)
 
+        var body = {
+            'twitter': {
+                'name' : await info.name,
+                'followers' : await info.followers,
+                'tweet' : {
+                    'body' : await tweet.body,
+                    'date' : await tweet.date,
+                    'url' : await tweet.url,
+                    'stats' : await tweet.stats
+                }
+            }
+        }
+
+        return body
     }
     
+    // youtube util
     async getLastElement(array) {
         return (array.length - 1)
     }
@@ -113,11 +121,24 @@ class bot extends Discord.Client {
         }
     }
 
+    async createChannel(msg, agency) {
+        this.channels.cache.get //922291809667907665
+    }
+
+
+    async update() {
+        const fs = require('fs/promises')
+        
+    }
+
     async init() {
 
+        
         this.on('ready', () => {
             console.log('ready');
+
         })
+
     }
 
 
@@ -125,4 +146,49 @@ class bot extends Discord.Client {
 
 let dcord = new bot({intents: ALL_INTENTS})
 dcord.init();
+
+dcord.on('messageCreate', (message) => {
+
+    if (message.content == "!start" && message.member.roles.highest.id == config.adminRole){
+
+        var dirchannel
+
+        for (var i = 0; i < keys.length; i++) {
+
+            const name = (keys.length == 1)? keys[i]['agency'] : '#' + toString(i) + keys[i]['agency']
+            message.guild.channels.create(keys[i]['agency'], {
+                type: 'text',
+            })
+            .then((channel) => {
+                channel.setParent(config.category)
+
+                console.log(keys[i])
+                for (var r = 0; r < keys[i]['region'].length; r++) {
+                    const region = keys[i]['region'][r]
+                    for (var g = 0; g < keys[i]['generation'][r].length; g++) {
+                        const gen = keys[i]['generation'][r][g]
+                        for (var k = 0; k < data[i][region][r][gen].length; k++) {
+                            channel.threads.create({
+                                name: data[i][region][r][gen][g][k].name,
+                                autoArchiveDuration: 86400,
+                                reason: data[region][gen][k].name + "'s notifications"
+                            })
+                        }
+    
+                    }
+                }
+
+                
+            })
+
+
+
+
+
+        }
+
+    }
+
+})
+
 dcord.login(config.token);
