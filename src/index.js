@@ -2,10 +2,9 @@ const Discord = require('discord.js');
 const config = require('../data/config.json');
 const data = require("../data/data.json");
 const keys = require('../data/keys.json').keys
+const vtubers = require('./chuuba.js');
 const path = require('path');
 
-
-// all intents for now until i figure out whether or not im satisfied with this project
 const ALL_INTENTS = 
     (1 << 0) +  // GUILDS
     (1 << 9);
@@ -141,7 +140,6 @@ class bot extends Discord.Client {
 
     }
 
-
 }
 
 let dcord = new bot({intents: ALL_INTENTS})
@@ -151,10 +149,10 @@ dcord.on('messageCreate', (message) => {
 
     if (message.content == "!start" && message.member.roles.highest.id == config.adminRole){
 
-        var dirchannel
-
         for (var i = 0; i < keys.length; i++) {
 
+            let toober = new Map<String, keys[i]>
+            dcord.directory.push(new Vtub)
             const name = (keys.length == 1)? keys[i]['agency'] : '#' + toString(i) + keys[i]['agency']
             message.guild.channels.create(keys[i]['agency'], {
                 type: 'text',
@@ -177,13 +175,8 @@ dcord.on('messageCreate', (message) => {
     
                     }
                 }
-
                 
             })
-
-
-
-
 
         }
 
